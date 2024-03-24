@@ -10,9 +10,11 @@ export default async function userLogIn(userEmail: string, userPassword: string)
             password: userPassword
         })
     });
-
+    
     if(!response.ok) {
         throw new Error('Can\'t Login');
     }
+
+    
     return await response.json();
 }

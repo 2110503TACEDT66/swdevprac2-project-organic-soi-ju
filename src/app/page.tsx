@@ -6,6 +6,8 @@ import Banner from '@/components/Banner'
 import HomeText from '@/components/Home'
 
 export default function Home() {
+
+  
   return (
     <main className='flex flex-col'>
       <TopLogo />
