@@ -21,7 +21,7 @@ export default function Navbar() {
                 <Link href="/profile">
                     <div className="">Profile</div>
                 </Link>
-                <Link href="/login">
+                <Link href="/api/auth/signin">
                     <div className="">Login</div>
                 </Link>
             </div>
