@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export default function Navbar() {
     return (
-        <div className="h-[50px] w-full bg-jason top-0 z-50 flex flex-row items-center text-primary justify-start md:justify-center font-bold " >
+        <div className="h-[50px] w-full bg-jason top-0 z-50 flex flex-row items-center text-primary justify-start md:justify-center font-semibold " >
             <div className="flex flex-row gap-10 ml-[2.5vw] ">
                 <Link href="/">
                     <div className="">Home</div>
