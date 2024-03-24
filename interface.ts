@@ -1,7 +1,14 @@
+export interface ReservationJson {
+    success: boolean,
+    count: number,
+    data: ReservationItem[]
+}
+
+
 export interface ReservationItem {
-    id: string,
+    _id: string,
     user: string,
-    massage_shop: string,
+    massage_shop: ShopItem,
     reserveDate: string
   }
     

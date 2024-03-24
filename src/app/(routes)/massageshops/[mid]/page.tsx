@@ -11,7 +11,7 @@ export default async function ShopPage({params} : {params: {mid: string}}) {
         <main>
             <div className="flex flex-col items-center">
                 <h1 className="text-center my-3 font-bold text-2xl">Shop Info</h1>
-                <div className="flex flex-row bg-zinc-300 rounded-md shadow-md w-[95%] h-[400px] p-5">
+                <div className="flex flex-row bg-zinc-300 rounded-md shadow-md w-[95%] h-[80vh] p-5">
                     <div className="w-[50%] h-auto relative">
                         <Image src='/images/massage1.png' alt="Shop Picture" fill={true}
                         className="shadow-md rounded-md"></Image>

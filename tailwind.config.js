@@ -9,7 +9,9 @@ module.exports = {
       colors: {
         primary: "#535353",
         'jason':"#E9E9E9",
-        'james':"#7B6000"
+        'james':"#7B6000",
+        'doomred':"#C37D7D",
+        'doomered':"#D26E6E",
       },
     },
     

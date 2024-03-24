@@ -5,7 +5,7 @@ import { ShopItem } from "../../interface";
 
 export default function ShopCard ({shop}: {shop: ShopItem}) {
     return (
-        <div className="flex flex-row w-[90%] h-[300px] m-5 p-5 shadow-md rounded bg-zinc-300">
+        <div className="flex flex-row w-[90%] h-[300px] m-5 p-5 shadow-md rounded bg-jason text-primary">
             <div className="w-[25%] relative">
                 <Image src={'/images/massage1.png'} alt='Shop Picture' fill={true}></Image>
             </div>
@@ -29,7 +29,7 @@ export default function ShopCard ({shop}: {shop: ShopItem}) {
             <div className="w-[30%] flex flex-col justify-center">
                 <div className="flex flex-row justify-center">
                     <Link href={`/massageshops/${shop.id}`}>
-                        <button className="rounded-md shadow-md bg-red-400 text-white w-auto px-6 py-1 hover:bg-red-600">
+                        <button className="rounded-md shadow-md bg-doomred text-white w-auto px-6 py-1 hover:bg-red-400">
                             Info
                         </button>                     
                     </Link>
