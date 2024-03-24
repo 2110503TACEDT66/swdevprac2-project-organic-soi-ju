@@ -1,1 +1,57 @@
 // page for making reservation and filling forms
+'use client'
+
+import { Dayjs } from 'dayjs';
+import { useSearchParams } from 'next/navigation';
+import { useState } from 'react';
+import Link from 'next/link';
+import DateReserve from '@/components/DateReserve';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '@/redux/store';
+
+export default function ReserveShop () {
+
+    const url = useSearchParams();
+    const id = url.get('id');
+    const shopName = url.get('shop');
+    
+    const [reserveDate, setDate] = useState<Dayjs | null>(null);
+    
+    const dispatch = useDispatch<AppDispatch>;
+
+    const reserveShop = () => {
+        if (reserveDate) {
+
+        }
+    }
+
+    return (
+        <main>
+            <div className="flex flex-col items-center">
+                <h1 className="text-center my-3 font-bold text-2xl">Make Reservation</h1>
+                <div className="flex flex-col bg-zinc-300 rounded-md shadow-md w-[95%] h-[400px] p-5">
+                    <div className='h-[10%]'>
+                        <Link href={`/massageshops/${id}`}>
+                            <button className="rounded-md shadow-md bg-red-400 text-white w-auto px-3 py-1 hover:bg-red-600">
+                                Back
+                            </button>
+                        </Link>
+                    </div>
+                    <div className='flex flex-col items-center justify-around h-[90%]'>
+                        <h1 className="text-center font-bold text-xl">Shop: {shopName}</h1>
+                        <h1 className="text-center font-bold text-xl">Date</h1>
+                        <DateReserve onDateChange={(value: Dayjs) => setDate(value)}/>
+                        <button type='submit' className="rounded-md shadow-md bg-red-400 text-white w-auto px-3 py-1 hover:bg-red-600"
+                        onClick={() => {
+                            reserveShop();
+                        }}>
+                            Make Reservation
+                        </button>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </main>
+    );
+}

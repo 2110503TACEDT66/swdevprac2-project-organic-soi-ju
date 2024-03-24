@@ -1,9 +1,8 @@
-export interface BookingItem {
-    name: string,
-    surname: string,
+export interface ReservationItem {
     id: string,
-    hospital: string,
-    bookDate: string
+    user: string,
+    massage_shop: string,
+    reserveDate: string
   }
     
 export interface ShopItem {
@@ -15,6 +14,8 @@ export interface ShopItem {
     postalcode: string,
     tel: string,
     picture: string,
+    open_time: string,
+    close_time: string
     __v: number,
     id: string
 }
