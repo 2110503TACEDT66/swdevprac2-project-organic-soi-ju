@@ -7,7 +7,7 @@ export default function Navbar() {
                 <Link href="/">
                     <div className="">Home</div>
                 </Link>
-                <Link href="/">
+                <Link href="/massageshops">
                     <div className="">Shops</div>
                 </Link>
                 <Link href="/">
