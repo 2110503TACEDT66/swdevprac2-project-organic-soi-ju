@@ -6,10 +6,10 @@ export default function InteractiveCard({children}:{ children: React.ReactNode})
         if(event.type == 'mouseover'){
             event.currentTarget.classList.remove('shadow-lg', 'bg-jason');
             event.currentTarget.classList.remove('h-[300px]', 'w-[90%]');
-            event.currentTarget.classList.add('shadow-2xl', 'bg-white');
+            event.currentTarget.classList.add('shadow-2xl', 'bg-gray-100');
             event.currentTarget.classList.add('h-[350px]', 'w-[92%]');
         }else{
-            event.currentTarget.classList.remove('shadow-2xl','bg-white');
+            event.currentTarget.classList.remove('shadow-2xl','bg-gray-100');
             event.currentTarget.classList.remove('h-[350px]', 'w-[92%]');
             event.currentTarget.classList.add('shadow-lg','bg-jason');
             event.currentTarget.classList.add('h-[300px]', 'w-[90%]');

@@ -1,11 +1,12 @@
 import { getServerSession } from "next-auth"
 import Link from "next/link"
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import getUserProfile from "@/libs/getUserProfile";
+import { profile } from "console";
 
 export default async  function Navbar() {
 
     const session = await getServerSession(authOptions);
-
 
 
     return (
@@ -20,6 +21,7 @@ export default async  function Navbar() {
                 <Link href="/">
                     <div className="">Our Products</div>
                 </Link>
+                
             </div>
             <div className="absolute right-[2.5vw] flex flex-row gap-10">
 
@@ -37,9 +39,14 @@ export default async  function Navbar() {
                             </Link> 
                         </>
                         :
-                        <Link href="/api/auth/signin">
-                            <div className="">Login</div>
-                        </Link> 
+                        <>
+                            <Link href="/register">
+                                <div className="">Register</div>
+                            </Link>
+                            <Link href="/api/auth/signin">
+                                <div className="">Login</div>
+                            </Link> 
+                        </>
                 }
             </div>
 
