@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import InteractiveCard from "./InteractiveCard";
 import { ShopItem } from "../../interface";
 
 
 export default function ShopCard ({shop}: {shop: ShopItem}) {
     return (
-        <div className="flex flex-row w-[90%] h-[300px] m-5 p-5 shadow-md rounded bg-jason text-primary">
+        <InteractiveCard>
             <div className="w-[25%] relative">
                 <Image src={'/images/massage1.png'} alt='Shop Picture' fill={true}></Image>
             </div>
@@ -38,6 +39,6 @@ export default function ShopCard ({shop}: {shop: ShopItem}) {
                 
             </div>
             
-        </div>
+        </InteractiveCard>
     );
 }
