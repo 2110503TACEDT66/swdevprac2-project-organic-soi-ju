@@ -10,7 +10,7 @@ export default function MassageShops () {
     return (
         <main className="">
             <div>
-                <div  className="text-center my-3 font-bold text-2xl">Shops List</div>
+                <div  className="text-center mt-10 font-bold text-2xl text-primary">Shops List</div>
             </div>
             <Suspense fallback={ <p className="font-semibold text-center text-primary my-2">LOADING ...<LinearProgress/></p>}>
                 <ShopList shopJson={shops}/>

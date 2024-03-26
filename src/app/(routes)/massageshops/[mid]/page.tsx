@@ -8,36 +8,34 @@ export default async function ShopPage({params} : {params: {mid: string}}) {
     const shop = await getShop(params.mid);
     
     return (
-        <main>
-            <div className="flex flex-col items-center">
+        <main >
+            <div className="flex flex-col h-full items-center text-primary">
                 <h1 className="text-center my-3 font-bold text-2xl">Shop Info</h1>
-                <div className="flex flex-row bg-zinc-300 rounded-md shadow-md w-[95%] h-[80vh] p-5">
-                    <div className="w-[50%] h-auto relative">
+                <div className="flex flex-row bg-jason rounded-md shadow-md w-[95%] h-[80vh]">
+                    <div className="w-[60%] h-auto relative">
                         <Image src='/images/massage1.png' alt="Shop Picture" fill={true}
-                        className="shadow-md rounded-md"></Image>
+                        className=""/>
                     </div>
-                    <div className="flex flex-col justify-start px-5 py-2">
+                    <div className="flex flex-col justify-start items-center text-center w-[40%] gap-5 px-[100px] py-2 relative my-[5%]">
                         <div>
-                        <p className="inline font-semibold">Name: </p>{ shop.data.name }
+                        <p className="inline font-semibold">Name<br/> </p>{ shop.data.name }
                         </div>
                         <div>
-                            <p className="inline font-semibold">Address: </p>{ shop.data.address }, { shop.data.district }, 
+                            <p className="inline font-semibold">Address <br/></p>{ shop.data.address }, { shop.data.district }<br/>{ shop.data.province } { shop.data.postalcode }
                         </div>
+                       
                         <div>
-                            { shop.data.province } { shop.data.postalcode }
-                        </div>
-                        <div>
-                            <p className="inline font-semibold">Open-Close: </p>{ shop.data.open_time } - { shop.data.close_time }
+                            <p className="inline font-semibold">Open-Close<br/> </p>{ shop.data.open_time } - { shop.data.close_time }
                         </div>
                         <div>
                             <p className="inline font-semibold">Tel: </p>{ shop.data.tel }
                         </div>
                         <div>
-                            <p className="inline font-semibold">Description: </p>This shop offers variety of massages and body treatments. We have dragon scale skin scrubber, whale testicle oil, soul-burning stone, and much much more!
+                            <p className="inline font-semibold">Description<br/> </p>This shop offers variety of massages and body treatments. We have dragon scale skin scrubber, whale testicle oil, soul-burning stone, and much much more!
                         </div>
-                        <div className="my-5">
+                        <div className="m-auto">
                             <Link href={`/reserveshop?id=${params.mid}&shop=${shop.data.name}`}>
-                                <button className="rounded-md shadow-md bg-red-400 text-white w-auto px-3 py-1 hover:bg-red-600">
+                                <button className="rounded-md shadow-md bg-primary text-white w-auto px-3 py-4 hover:shadow-lg hover:bg-gray-800 transition-all ">
                                     Make Reservation
                                 </button>
                             </Link>

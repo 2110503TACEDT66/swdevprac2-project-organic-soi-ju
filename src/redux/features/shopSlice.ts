@@ -17,7 +17,7 @@ export const shopSlice = createSlice({
     
         addReservation: (state, action: PayloadAction<ReservationItem>) => {
 
-            if (state.shopItems.length == 3) {
+            if (state.shopItems.length >= 3) {
                 alert('You can only reserve 3 shops');
                 return;
             }
@@ -30,7 +30,7 @@ export const shopSlice = createSlice({
 
             const remainingShops = state.shopItems.filter(obj => {
                 return (
-                    obj.id != action.payload
+                    obj._id != action.payload
                 )
             });
 

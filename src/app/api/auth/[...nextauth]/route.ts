@@ -40,6 +40,7 @@ export const authOptions:AuthOptions = {
         strategy: 'jwt'
     },
     callbacks: {
+      
         async jwt({token, user}) {
             return {...token, ...user};
         },

@@ -1,6 +1,9 @@
-export default async function getReservations(token: string) {
+export default async function getUsers(token: string) {
 
-    const response = await fetch('http://localhost:5050/api/users', {
+    const response = await fetch('http://localhost:5050/api/v1/auth/users', {
+        next: {
+            tags: ['users'],
+        },
         method: 'GET',
         headers: {
             Authorization: `Bearer ${token}`

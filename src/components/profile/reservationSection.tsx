@@ -18,11 +18,11 @@ export default async function ReservationSection() {
     
 
     return (
-        <div className="flex flex-col items-center justify-start w-[70%] h-full mt-3 p-5 gap-10">
-            <div className="my-5 text-primary font-bold text-2xl">
+        <div className="flex flex-col bg-jason rounded-md shadow-md items-center justify-start w-[70%] h-full p-5">
+            <div className=" text-primary font-bold text-2xl my-5">
                 Reservations
             </div>
-            <div className="flex flex-col items-center justify-start gap-5 w-[90%]">
+            <div className="flex flex-col items-center justify-start gap-5 w-[90%] h-full ">
                 {
                     reservations.data.map((reservation: ReservationItem) => (
                         <ReservationCard reservation={reservation} />

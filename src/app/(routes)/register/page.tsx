@@ -1,31 +1,18 @@
+'use client';
 import User from "@/db/models/Users"
-import { dbConect } from "@/db/dbConnect"
+import { dbConnect } from "@/db/dbConnect"
+import { addUser } from "./actions";
 
-export default async function RegisterPage(){
+export default function RegisterPage(){
     
-    const addUser = async (adduserForm:FormData) => {
-        'use server'
-        const name = adduserForm.get("name")
-        const email = adduserForm.get("email")
-        const password = adduserForm.get("password")
-        const tel = adduserForm.get("tel")
-
-        try{
-            await dbConect()
-            const user = await User.create({
-                "name": name,
-                "email": email,
-                "password": password,
-                "tel": tel
-            })
-        }catch(error){
-            console.log(error)
-        }
-    }
+  
     
     return(
         <div className="bg-gray-300 mx-10 my-10 px-5 py-2">
-        <form action={addUser} className="bg-jason my-5 mx-44 rounded-lg p-5 flex flex-col items-center">
+        <form action={async (FormData)=>{
+            await addUser(FormData);
+            
+        }} className="bg-jason my-5 mx-44 rounded-lg p-5 flex flex-col items-center">
             <div className="text-2xl  text-semibold font-serif">Register</div>
             <div className="flex items-center w-1/2 my-2">
                 <label className="w-auto block text-gray-700 pr-4" htmlFor="name">Name:</label>

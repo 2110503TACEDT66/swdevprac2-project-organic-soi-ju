@@ -7,8 +7,7 @@ export default async function ShopList ({shopJson} : {shopJson: Promise<ShopJson
     const shopJsonReady = await shopJson;
 
     return (
-        <div className="flex flex-col items-center">
-            <h1 className="text-center my-3 font-bold text-2xl">Shops List</h1>
+        <div className="flex flex-row flex-wrap w-full items-center justify-center mt-5 ">
             {
                 shopJsonReady.data.map((shopItem) => (
                     
