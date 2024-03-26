@@ -9,7 +9,10 @@ export default async function UserInfoBox() {
     const profile = await getUserProfile(session.user.token);
 
     return (
-        <div className="flex flex-col  w-full p-5">
+        <div className="flex flex-col bg-gray-100 w-full p-5 rounded-lg h-full">
+            <div className="flex flex-row justify-center items-center">
+                <div className="text-xl font-bold mb-3">User Info</div>
+            </div>
             <div className="flex flex-row justify-between">
                 
                 <div className="text-primary font-bold text-lg">
@@ -20,6 +23,9 @@ export default async function UserInfoBox() {
                                 </div>
                                 <div className="font-bold">
                                     <div>Email: {profile.data.email}</div>
+                                </div>
+                                <div className="font-bold">
+                                    <div>Tel: {profile.data.tel}</div>
                                 </div>
                         </div>
                 </div>
