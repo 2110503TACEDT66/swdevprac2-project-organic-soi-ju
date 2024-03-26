@@ -51,7 +51,7 @@ export default function ReserveShop () {
                     </div>
                     <div className='flex flex-col items-center justify-around h-[90%]'>
                         <h1 className="text-center font-bold text-xl">Shop: {shopName}</h1>
-                        <h1 className="text-center font-bold text-xl">Date: {reserveDate?.toString()}</h1>
+                        <h1 className="text-center font-bold text-xl">Date: {dayjs(reserveDate).toDate().toLocaleString()}</h1>
                         <DateReserve onDateChange={(value: Dayjs) => setDate(value)}/>
                         <button className="rounded-md shadow-md bg-red-400 text-white w-auto px-3 py-1 hover:bg-red-600"
                         onClick={() => {
