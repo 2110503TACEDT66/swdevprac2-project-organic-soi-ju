@@ -12,7 +12,10 @@ export default async function addReservation (token: string, mid: string, date: 
     });
 
     if(!response.ok) {
-        alert(response.statusText);
+        // console.log("Failed to add reservation");
+        // throw new Error('Failed to add reservation');
+        alert("Failed to add reservation"); // client side error handling or it wouldnt work.
+        
     }
 
     return await response.json();

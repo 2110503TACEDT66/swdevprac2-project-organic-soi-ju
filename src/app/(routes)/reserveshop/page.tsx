@@ -10,6 +10,8 @@ import { useDispatch } from 'react-redux';
 import { AppDispatch } from '@/redux/store';
 import addReservation from '@/libs/addReservation';
 import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
+import { createAndRevalidateShop } from '@/utils/resActions';
 
 export default function ReserveShop () {
 
@@ -20,11 +22,18 @@ export default function ReserveShop () {
     const [reserveDate, setDate] = useState<Dayjs | null>(null);
     
     const { data: session } = useSession();
+
+    const router = useRouter();
     
 
     const reserveShop = () => {
         if (reserveDate && session && id) {
+            
             addReservation(session.user.token, id, dayjs(reserveDate).toDate());
+           
+            createAndRevalidateShop();
+            
+            router.push('/profile');
         }
     }
 
