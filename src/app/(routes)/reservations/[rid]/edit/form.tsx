@@ -10,6 +10,7 @@ import addReservation from '@/libs/addReservation';
 import { useSession } from 'next-auth/react';
 import updateReservation from '@/libs/updateReservation';
 import SaveButton from "@/components/SaveButton"
+import { ShopJson } from '../../../../../../interface';
 import { ShopItem } from '../../../../../../interface';
 
 export default function EditForm({token, rid, shop}:{token:string, rid: string, shop: ShopItem}){
