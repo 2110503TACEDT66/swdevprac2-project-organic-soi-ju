@@ -43,7 +43,7 @@ export default async function ReservationPage({
                     </div>
                 </div>
                 <div className="w-full  flex justify-center" >
-                    <ShopCard shop={shop.data} />
+                    <ShopCard shop={shop.data} imgSrc={shop.picture? shop.picture : '/images/massage1.png'}/>
                 </div>
             </div>
         </div>

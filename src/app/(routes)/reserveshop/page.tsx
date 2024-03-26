@@ -24,7 +24,7 @@ export default function ReserveShop () {
 
     const reserveShop = () => {
         if (reserveDate && session && id) {
-            addReservation(session.user.token, id, reserveDate.toString());
+            addReservation(session.user.token, id, dayjs(reserveDate).toDate());
         }
     }
 
