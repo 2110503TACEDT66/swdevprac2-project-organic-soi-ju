@@ -1,4 +1,4 @@
-export default async function getReservations(token: string) {
+export default async function getUsers(token: string) {
 
     const response = await fetch('http://localhost:5050/api/users', {
         method: 'GET',
