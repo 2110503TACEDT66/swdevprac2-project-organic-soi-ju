@@ -11,7 +11,7 @@ export default async function ShopList ({shopJson} : {shopJson: Promise<ShopJson
             {
                 shopJsonReady.data.map((shopItem) => (
                     
-                    <ShopCard shop={shopItem}></ShopCard>
+                    <ShopCard key={shopItem.id} shop={shopItem} imgSrc={shopItem.picture? shopItem.picture : '/images/massage1.png'}></ShopCard>
                 
                 ))
             }
