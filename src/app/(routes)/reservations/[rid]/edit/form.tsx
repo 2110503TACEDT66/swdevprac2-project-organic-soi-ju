@@ -10,8 +10,9 @@ import addReservation from '@/libs/addReservation';
 import { useSession } from 'next-auth/react';
 import updateReservation from '@/libs/updateReservation';
 import SaveButton from "@/components/SaveButton"
+import { ShopItem } from '../../../../../../interface';
 
-export default function EditForm({token, rid, shop}:{token:string, rid: string, shop: any}){
+export default function EditForm({token, rid, shop}:{token:string, rid: string, shop: ShopItem}){
     
     const [reserveDate, setDate] = useState<Dayjs | null>(null);
     
@@ -30,7 +31,7 @@ export default function EditForm({token, rid, shop}:{token:string, rid: string, 
                         </Link>
                     </div>
                     <div className='flex flex-col items-center justify-around h-[90%]'>
-                        <h1 className="text-center font-bold text-xl">Shop: {shop.data.name}</h1>
+                        <h1 className="text-center font-bold text-xl">Shop: {shop.name}</h1>
                         <h1 className="text-center font-bold text-xl">Date: {dayjs(reserveDate).toDate().toLocaleString()}</h1>
                         <DateReserve onDateChange={(value: Dayjs) => setDate(value)}/>
                     </div>
