@@ -1,3 +1,4 @@
+
 import { getServerSession } from "next-auth"
 import Link from "next/link"
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
@@ -7,6 +8,8 @@ import { profile } from "console";
 export default async  function Navbar() {
 
     const session = await getServerSession(authOptions);
+    
+    
 
 
     return (

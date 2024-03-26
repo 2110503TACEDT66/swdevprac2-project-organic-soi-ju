@@ -30,7 +30,7 @@ export default function Banner(){
                     <p className="z-20 absolute ml-3 px-8 py-5 top-0 right-36 text-3xl text-white font-light">Scent of CO2</p>
                 </div>
             </div>
-            <div className="mt-5 w-full flex flex-col items-center justify-center">
+            <div className="mt-5 w-full flex flex-col items-center justify-center text-primary">
                 Discover More
                 <ExpandMoreIcon fontSize="large"/>
             </div>
