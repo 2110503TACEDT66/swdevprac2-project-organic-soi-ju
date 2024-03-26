@@ -15,27 +15,34 @@ export default async function UserBox() {
 
     let imageSrc = '/images/house.svg';
 
+    const localDate = new Date(profile.data.createdAt).toLocaleString();
+
     if(profile.data.picture) {
         imageSrc = profile.data.picture;
     }
 
     return (
-        <div className="flex flex-row items-center justify-start w-[100%] h-full mt-3 p-5 gap-10 relative">
+        <div className="flex flex-row items-center justify-start w-[100%] h-1/4 mt-3 p-5 gap-5 relative">
             <div className="border-solid rounded-md border-primary border-[2px] ">
             <Image  src={"/images/house.svg"} alt="logo" width={70} height={70} />
             </div>
-            <div className=" my-5 text-primary font-bold text-xl">
+            <div className=" my-5 mr-5 text-primary font-bold text-xl">
                 {
                     session ? 
                     <div>
-                    Hello {profile.data.name}            
+                        <div>
+                            {profile.data.name}            
+                        </div>
+                        <div className="text-sm">
+                            Member since {localDate}
+                        </div>
                     </div>
                     :
                     "Guest"
                 }
 
             </div>
-            <Link href="/api/auth/signout" className="absolute right-10">
+            <Link href="/api/auth/signout" className="absolute right-5 ">
                 <button className="bg-doomred p-2 rounded-md hover:bg-doomered transition-colors ">Logout</button>
             </Link>
         </div>
