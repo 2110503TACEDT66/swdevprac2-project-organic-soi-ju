@@ -1,6 +1,6 @@
 export default async function getShop (id: string) {
 
-    const response = await fetch(`https://presentation-day-1-organic-soi-ju-omega.vercel.app/api/v1/massageShops/${id}`, {
+    const response = await fetch(`${process.env.BACKEND_URL}/api/v1/massageShops/${id}`, {
         method: 'GET'
     });
 
