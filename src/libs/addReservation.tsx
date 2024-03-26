@@ -1,6 +1,6 @@
 export default async function addReservation (token: string, mid: string, date: Date) {
 
-    const response = await fetch(`https://presentation-day-1-organic-soi-ju-omega.vercel.app/api/v1/massageShops/${mid}/reservations`, {
+    const response = await fetch(`${process.env.BACKEND_URL}/api/v1/massageShops/${mid}/reservations`, {
         method: 'POST',
         headers: {
             Authorization: `Bearer ${token}`,
