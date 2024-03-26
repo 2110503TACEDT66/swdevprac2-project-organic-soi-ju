@@ -3,7 +3,7 @@
 export default async function getReservation(token: string, rid: string) {
 
     const response = await fetch(
-        `http://localhost:5050/api/v1/reservations/${rid}`,
+        `https://presentation-day-1-organic-soi-ju-omega.vercel.app/api/v1/reservations/${rid}`,
          {
         method: 'GET',
         headers: {

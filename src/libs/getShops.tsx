@@ -2,7 +2,7 @@ export default async function getShops () {
 
     await new Promise(resolve => setTimeout(resolve, 2000));
 
-    const response = await fetch('http://localhost:5050/api/v1/massageShops', {
+    const response = await fetch('https://presentation-day-1-organic-soi-ju-omega.vercel.app/api/v1/massageShops', {
         method: 'GET'
     });
 
