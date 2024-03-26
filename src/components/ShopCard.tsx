@@ -4,11 +4,13 @@ import InteractiveCard from "./InteractiveCard";
 import { ShopItem } from "../../interface";
 
 
-export default function ShopCard ({shop}: {shop: ShopItem}) {
+export default function ShopCard ({shop, imgSrc}: {shop: ShopItem, imgSrc: string}) {
+
+
     return (
         <InteractiveCard>
             <div className="w-[25%] relative">
-                <Image src={'/images/massage1.png'} alt='Shop Picture' fill={true}></Image>
+                <Image src={imgSrc} alt='Shop Picture' fill={true}></Image>
             </div>
             <div className="flex flex-col justify-center p-3 m-2 w-[45%]">
                 <div>

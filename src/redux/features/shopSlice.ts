@@ -30,7 +30,7 @@ export const shopSlice = createSlice({
 
             const remainingShops = state.shopItems.filter(obj => {
                 return (
-                    obj.id != action.payload
+                    obj._id != action.payload
                 )
             });
 

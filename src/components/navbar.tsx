@@ -31,7 +31,7 @@ export default async  function Navbar() {
                     session ?
                         <>
                             <Link href="/profile">
-                                <div className="">Profile</div>
+                                <div className="">{session.user?.name} Profile</div>
                             </Link>
 
                             <Link href="/api/auth/signout">

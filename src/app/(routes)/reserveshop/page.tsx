@@ -1,13 +1,15 @@
 // page for making reservation and filling forms
 'use client'
 
-import { Dayjs } from 'dayjs';
+import dayjs, { Dayjs } from 'dayjs';
 import { useSearchParams } from 'next/navigation';
 import { useState } from 'react';
 import Link from 'next/link';
 import DateReserve from '@/components/DateReserve';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '@/redux/store';
+import addReservation from '@/libs/addReservation';
+import { useSession } from 'next-auth/react';
 
 export default function ReserveShop () {
 
@@ -17,11 +19,12 @@ export default function ReserveShop () {
     
     const [reserveDate, setDate] = useState<Dayjs | null>(null);
     
-    const dispatch = useDispatch<AppDispatch>;
+    const { data: session } = useSession();
+    
 
     const reserveShop = () => {
-        if (reserveDate) {
-
+        if (reserveDate && session && id) {
+            addReservation(session.user.token, id, reserveDate.toString());
         }
     }
 
@@ -39,9 +42,9 @@ export default function ReserveShop () {
                     </div>
                     <div className='flex flex-col items-center justify-around h-[90%]'>
                         <h1 className="text-center font-bold text-xl">Shop: {shopName}</h1>
-                        <h1 className="text-center font-bold text-xl">Date</h1>
+                        <h1 className="text-center font-bold text-xl">Date: {reserveDate?.toString()}</h1>
                         <DateReserve onDateChange={(value: Dayjs) => setDate(value)}/>
-                        <button type='submit' className="rounded-md shadow-md bg-red-400 text-white w-auto px-3 py-1 hover:bg-red-600"
+                        <button className="rounded-md shadow-md bg-red-400 text-white w-auto px-3 py-1 hover:bg-red-600"
                         onClick={() => {
                             reserveShop();
                         }}>
