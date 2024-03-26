@@ -1,7 +1,7 @@
 
 export default async function getReservations(token: string) {
 
-    const response = await fetch('http://localhost:5050/api/v1/reservations', {
+    const response = await fetch('https://presentation-day-1-organic-soi-ju-omega.vercel.app/api/v1/reservations', {
         next: {
             tags: ['reservations'],
         },
