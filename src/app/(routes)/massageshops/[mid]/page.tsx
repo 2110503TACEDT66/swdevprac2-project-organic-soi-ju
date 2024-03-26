@@ -11,11 +11,11 @@ export default async function ShopPage({params} : {params: {mid: string}}) {
     return (
         <main >
             <div className="flex flex-col h-full items-center text-primary">
-                <h1 className="text-center my-3 font-bold text-2xl">Shop Info</h1>
+                <h1 className="text-center my-6 font-bold text-2xl">Shop Info</h1>
                 <div className="flex flex-row bg-jason rounded-md shadow-md w-[95%] h-[80vh]">
                     <div className="w-[60%] h-auto relative">
                         <Image src={shop.data.picture? decorateLink(shop.data.picture) : '/images/massage1.png'} alt="Shop Picture" fill={true}
-                        className=""/>
+                        className="rounded-l-md"/>
                     </div>
                     <div className="flex flex-col justify-start items-center text-center w-[40%] gap-5 px-[100px] py-2 relative my-[5%]">
                         <div>

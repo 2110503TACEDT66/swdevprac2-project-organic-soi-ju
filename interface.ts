@@ -7,7 +7,7 @@ export interface ReservationJson {
 
 export interface ReservationItem {
     _id: string,
-    user: string,
+    user: UserItem,
     massage_shop: ShopItem,
     reserveDate: string
   }
@@ -32,4 +32,15 @@ export interface ShopJson {
     count: number,
     pagination: Object,
     data: ShopItem[]
+}
+
+export interface UserItem {
+    _id: string,
+    name: string,
+    email: string,
+    password: string,
+    tel: string,
+    role: string,
+    __v: number,
+    id: string
 }

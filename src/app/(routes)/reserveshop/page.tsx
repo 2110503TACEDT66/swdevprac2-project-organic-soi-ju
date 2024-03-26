@@ -43,21 +43,22 @@ export default function ReserveShop () {
 
     return (
         <main>
-            <div className="flex flex-col items-center">
-                <h1 className="text-center my-3 font-bold text-2xl">Make Reservation</h1>
-                <div className="flex flex-col bg-zinc-300 rounded-md shadow-md w-[95%] h-[400px] p-5">
+            <div className="flex flex-col items-center text-primary h-[85vh]">
+                <h1 className="text-center font-bold text-2xl my-6">Make Reservation</h1>
+                <div className="flex flex-col bg-jason rounded-md shadow-md w-[95%] h-[80vh] p-5">
                     <div className='h-[10%]'>
                         <Link href={`/massageshops/${id}`}>
-                            <button className="rounded-md shadow-md bg-red-400 text-white w-auto px-3 py-1 hover:bg-red-600">
+                            <button className="rounded-md shadow-md bg-primary text-white w-auto px-5 py-3 hover:bg-gray-700 transition-all">
                                 Back
                             </button>
                         </Link>
                     </div>
-                    <div className='flex flex-col items-center justify-around h-[90%]'>
-                        <h1 className="text-center font-bold text-xl">Shop: {shopName}</h1>
-                        <h1 className="text-center font-bold text-xl">Date: {dayjs(reserveDate).toDate().toLocaleString()}</h1>
+                    <div className='flex flex-col items-center justify-start gap-10 h-[90%]'>
+                        <h1 className="text-center font-bold text-[60px]">{shopName}</h1>
+                        <h1 className="text-center font-bold text-2xl ">Date: {dayjs(reserveDate).toDate().toLocaleString()}</h1>
                         <DateReserve onDateChange={(value: Dayjs) => setDate(value)}/>
-                        <button className="rounded-md shadow-md bg-red-400 text-white w-auto px-3 py-1 hover:bg-red-600"
+                        <button className="rounded-md shadow-md text-xl bg-primary text-white w-auto
+                         px-4 py-5 hover:bg-gray-800 transition-all mt-[10vh]"
                         onClick={() => {
                             reserveShop();
                         }}>

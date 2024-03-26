@@ -11,13 +11,13 @@ export default async function UserInfoBox() {
     return (
         <div className="flex flex-col bg-gray-100 w-full p-5 rounded-lg h-full">
             <div className="flex flex-row justify-center items-center">
-                <div className="text-xl font-bold mb-3">User Info</div>
+                <div className="text-xl font-bold mb-3 text-primary">User Info</div>
             </div>
             <div className="flex flex-row justify-between">
                 
                 <div className="text-primary font-bold text-lg">
                         {/* show all user field beautifully */}
-                        <div className="flex flex-col">
+                        <div className="flex flex-col gap-5">
                                 <div className="font-bold">
                                     <div>Name: {profile.data.name}</div>
                                 </div>

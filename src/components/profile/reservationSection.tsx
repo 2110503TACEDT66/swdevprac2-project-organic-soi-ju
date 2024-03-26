@@ -22,7 +22,7 @@ export default async function ReservationSection() {
             <div className=" text-primary font-bold text-2xl my-5">
                 Reservations
             </div>
-            <div className="flex flex-col items-center justify-start gap-5 w-[90%] h-full ">
+            <div className="flex flex-col items-center justify-start gap-5 w-[90%] h-full overflow-y-auto ">
                 {
                     reservations.data.map((reservation: ReservationItem) => (
                         <ReservationCard reservation={reservation} />

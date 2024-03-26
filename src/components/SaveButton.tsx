@@ -11,7 +11,7 @@ export default function SaveButton({token, rid, date} : {token: string, rid: str
     const router = useRouter();
 
     return (
-        <button className="p-3 bg-soz rounded-md hover:bg-darksoz transition-colors "
+        <button className="p-3 w-1/5 bg-soz rounded-md hover:bg-darksoz transition-colors "
         onClick={() => {updateReservation(token, rid, date); RevalidateShop(); router.push('/profile');
         setTimeout(() => {
             router.refresh();

@@ -25,10 +25,11 @@ export default async function ReservationPage({params}:{params: {rid: string}}) 
     const reserveDate = new Date(res.reserveDate).toLocaleString();
 
     const shop = await getShop(mid);
+    const name = shop.data.name;
 
     return (
         <main>
-             <EditForm token={session.user.token} rid={params.rid} shop={shop}/>
+             <EditForm token={session.user.token} rid={params.rid} shopName={name}/>
         </main>
     )
 }

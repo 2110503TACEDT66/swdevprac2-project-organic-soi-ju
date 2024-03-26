@@ -12,6 +12,9 @@ export default async function getReservation(token: string, rid: string) {
     });
 
     if(!response.ok) {
+        const err = await response.json()
+        console.log(err)
+       
         throw new Error('Failed to fetch reservation with id: ' + rid);
     }
 
