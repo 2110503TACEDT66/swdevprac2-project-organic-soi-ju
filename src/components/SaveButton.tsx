@@ -12,6 +12,9 @@ export default function SaveButton({token, rid, date} : {token: string, rid: str
 
     return (
         <button className="p-3 bg-soz rounded-md hover:bg-darksoz transition-colors "
-        onClick={() => {updateReservation(token, rid, date); RevalidateShop(); router.push('/profile')}}>Save</button>
+        onClick={() => {updateReservation(token, rid, date); RevalidateShop(); router.push('/profile');
+        setTimeout(() => {
+            router.refresh();
+        }, 500);}}>Save</button>
     );
 }

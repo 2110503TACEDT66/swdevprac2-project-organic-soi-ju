@@ -12,6 +12,9 @@ export default function CancelButton({token, rid} : {token: string, rid: string}
    
     return (
         <button className="p-3 bg-doomred rounded-md hover:bg-doomered transition-colors "
-        onClick={() => { deleteAndRevalidate(token, rid); router.push('/profile')}}>Cancel Reservation</button>
+        onClick={() => { deleteAndRevalidate(token, rid); router.push('/profile'); 
+        setTimeout(() => {
+            router.refresh();
+        }, 500); }}>Cancel Reservation</button>
     );
 }
