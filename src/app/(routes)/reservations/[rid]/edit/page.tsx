@@ -8,6 +8,7 @@ import ShopCard from "@/components/ShopCard";
 import getShop from "@/libs/getShop";
 import CancelButton from "@/components/CancelButton";
 import Link from "next/link";
+import EditForm from "./form";
 
 export default async function ReservationPage({params}:{params: {rid: string}}) {
 
@@ -27,7 +28,7 @@ export default async function ReservationPage({params}:{params: {rid: string}}) 
 
     return (
         <main>
-            
+             <EditForm token={session.user.token} rid={params.rid} shop={shop}/>
         </main>
     )
 }

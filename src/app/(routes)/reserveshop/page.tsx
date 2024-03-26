@@ -11,7 +11,7 @@ import { AppDispatch } from '@/redux/store';
 import addReservation from '@/libs/addReservation';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
-import { createAndRevalidateShop } from '@/utils/resActions';
+import { RevalidateShop } from '@/utils/resActions';
 
 export default function ReserveShop () {
 
@@ -31,7 +31,7 @@ export default function ReserveShop () {
             
             addReservation(session.user.token, id, dayjs(reserveDate).toDate());
            
-            createAndRevalidateShop();
+            RevalidateShop();
             
             router.push('/profile');
         }

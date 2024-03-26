@@ -1,4 +1,5 @@
 'use server'
+
 import deleteReservation from "@/libs/deleteReservation";
 import addReservation from "@/libs/addReservation";
 import { revalidateTag } from "next/cache";
@@ -10,7 +11,7 @@ export async function deleteAndRevalidate(token: string, rid: string) {
 
 }
 
-export async function createAndRevalidateShop(){
+export async function RevalidateShop(){
    
     revalidateTag('reservations');
     
