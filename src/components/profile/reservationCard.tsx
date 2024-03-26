@@ -13,11 +13,11 @@ export default function ReservationCard({
 
     return (
         <div className="flex flex-row bg-gray-50 w-[100%] h-[30%] p-6 text-primary items-center relative shadow-md rounded-md">
-            <div className="flex flex-col gap-10 ">
-                <div className="flex flex-col text-xl">
+            <div className="flex flex-col gap-10 p-4 ">
+                <div className="flex flex-col text-xl mt-3">
                 {massageShop.name}
                 </div>
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col mb-3">
 
                     <div>Massage Date : {localDate}</div>
                     <div>{massageShop.tel}</div>

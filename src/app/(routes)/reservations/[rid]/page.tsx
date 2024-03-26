@@ -6,6 +6,7 @@ import getUserProfile from "@/libs/getUserProfile";
 import ShopCard from "@/components/ShopCard";
 import getShop from "@/libs/getShop";
 import CancelButton from "@/components/CancelButton";
+import Link from "next/link";
 
 export default async function ReservationPage({params}:{params: {rid: string}}) {
 
@@ -33,6 +34,11 @@ export default async function ReservationPage({params}:{params: {rid: string}}) 
                     <div className="text-primary text-[20px] text-center"> Massage Date : {reserveDate} </div>
                     <div>
                     <CancelButton rid={params.rid} token={session.user.token}/>
+                    <Link href={`/reservations/${params.rid}/edit`}>
+                        <button className="p-3 bg-soz rounded-md hover:bg-darksoz transition-colors ">
+                            Edit Reservation
+                        </button>
+                    </Link>
                     </div>
                 </div>
                 <div className="w-full  flex justify-center" >

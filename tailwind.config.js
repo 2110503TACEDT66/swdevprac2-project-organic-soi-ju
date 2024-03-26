@@ -12,6 +12,8 @@ module.exports = {
         'james':"#7B6000",
         'doomred':"#C37D7D",
         'doomered':"#D26E6E",
+        'soz': "#00e6ac",
+        'darksoz': "#1affc6"
       },
     },
     
