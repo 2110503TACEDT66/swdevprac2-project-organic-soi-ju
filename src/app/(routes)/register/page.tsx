@@ -1,6 +1,6 @@
 "use client"
 import User from "@/db/models/Users"
-import { dbConect } from "@/db/dbConnect"
+import { dbConnect } from "@/db/dbConnect"
 import { redirect } from "next/navigation"
 import { revalidateTag } from "next/cache"
 import { useState } from "react"
