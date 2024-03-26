@@ -8,9 +8,6 @@ export default async function getReservations(token: string) {
         method: 'GET',
         headers: {
             Authorization: `Bearer ${token}`
-        },
-        next: {
-            tags: ['res']
         }
     });
 

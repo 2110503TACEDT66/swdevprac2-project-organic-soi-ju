@@ -1,7 +1,6 @@
 'use client'
 
 import deleteReservation from "@/libs/deleteReservation";
-import { revalidateTag } from "next/cache";
 import { useRouter } from "next/navigation";
 import { revalidateTag } from "next/cache";
 import { deleteAndRevalidate } from "@/utils/resActions";
