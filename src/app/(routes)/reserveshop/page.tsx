@@ -34,6 +34,10 @@ export default function ReserveShop () {
             RevalidateShop();
             
             router.push('/profile');
+            setTimeout(() => {
+                router.refresh();
+            }, 800);
+            
         }
     }
 

@@ -2,7 +2,7 @@
 
 import deleteReservation from "@/libs/deleteReservation";
 import addReservation from "@/libs/addReservation";
-import { revalidateTag } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 
 export async function deleteAndRevalidate(token: string, rid: string) {
 
