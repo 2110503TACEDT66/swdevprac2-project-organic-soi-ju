@@ -1,6 +1,7 @@
 'use client'
 
 import deleteReservation from "@/libs/deleteReservation";
+import { revalidateTag } from "next/cache";
 import { useRouter } from "next/navigation";
 
 export default function CancelButton({token, rid} : {token: string, rid: string}) {

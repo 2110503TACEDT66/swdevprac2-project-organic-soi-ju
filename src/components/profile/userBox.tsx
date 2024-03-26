@@ -4,6 +4,7 @@ import getUserProfile from "@/libs/getUserProfile";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import Link from "next/link";
+import { decorateLink } from "@/utils/decorateLink";
 
 
 export default async function UserBox() {
@@ -18,13 +19,13 @@ export default async function UserBox() {
     const localDate = new Date(profile.data.createdAt).toLocaleString();
 
     if(profile.data.picture) {
-        imageSrc = profile.data.picture;
+        imageSrc = decorateLink(profile.data.picture);
     }
 
     return (
         <div className="flex flex-row items-center justify-start w-[100%] h-1/4 mt-3 p-5 gap-5 relative">
             <div className="border-solid rounded-md border-primary border-[2px] ">
-            <Image  src={"/images/house.svg"} alt="logo" width={70} height={70} />
+            <Image  src={imageSrc} alt="logo" width={70} height={70} />
             </div>
             <div className=" my-5 mr-5 text-primary font-bold text-xl">
                 {
