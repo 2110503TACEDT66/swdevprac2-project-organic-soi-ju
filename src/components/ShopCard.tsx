@@ -36,7 +36,7 @@ export default function ShopCard ({shop, imgSrc}: {shop: ShopItem, imgSrc: strin
                 <div className="flex flex-col justify-center items-end ">
                     <Link href={`/massageshops/${shop.id}`}>
                         <button className="rounded-md shadow-md bg-doomred text-white w-auto px-6 py-1 hover:bg-red-400">
-                            Info
+                            View
                         </button>                     
                     </Link>
  
