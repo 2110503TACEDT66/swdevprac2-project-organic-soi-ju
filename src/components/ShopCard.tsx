@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import InteractiveCard from "./InteractiveCard";
 import { ShopItem } from "../../interface";
+import { decorateLink } from "@/utils/decorateLink";
 
 
 export default function ShopCard ({shop, imgSrc}: {shop: ShopItem, imgSrc: string}) {
@@ -12,7 +13,7 @@ export default function ShopCard ({shop, imgSrc}: {shop: ShopItem, imgSrc: strin
         <InteractiveCard>
 
             <div className="h-[60%] w-auto relative ">
-                <Image src={imgSrc} alt='Shop Picture' fill={true}></Image>
+                <Image src={decorateLink(imgSrc)} alt='Shop Picture' fill={true}></Image>
 
             </div>
             <div className="flex flex-col justify-between p-3 m-2 h-[40%]">
